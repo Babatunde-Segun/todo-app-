@@ -1,7 +1,7 @@
 import React from "react";
 
-const TodoList: React.FC<{ item: string }> = (prop) => {
-  return <li>{prop.item}</li>;
+const TodoList: React.FC<{ text: string }> = (prop) => {
+  return <li>{prop.text}</li>;
 };
 
 export default TodoList;
