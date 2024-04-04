@@ -1,3 +1,4 @@
+// classes has a special type which is the name of the class itself
 class Todo {
   id: string;
   text: string;
