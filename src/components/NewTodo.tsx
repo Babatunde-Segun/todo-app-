@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useRef } from "react";
+import classes from "./NewTodo.module.css";
 
 // To add a function as a prop we use the arrow syntax () => {}
 // Not to forget the we have to set type of any parameter that the function may have
@@ -11,7 +12,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = ({
   onAddTodo,
 }) => {
   // useRef point a HTML element: you just have to tell typescript the element you are point to.
-  const todoTextInputRef = useRef<HTMLInputElement>(null);
+  let todoTextInputRef = useRef<HTMLInputElement>(null);
 
   // React.FormEvent is a type in typescript use for a Form element
   const handleSubmit = (event: React.FormEvent) => {
@@ -23,10 +24,10 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = ({
     onAddTodo(enteredText);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <label htmlFor='todoText'>Add New Todo</label>
       <input type='text' name='todoText' id='todoText' ref={todoTextInputRef} />
-      <button type='submit'></button>
+      <button type='submit'>Add</button>
     </form>
   );
 };
