@@ -14,10 +14,16 @@ function App() {
       return [newTodo, ...prev];
     });
   };
+
+  const deleteTodoHandler = (id: string) => {
+    if (window.confirm("Are you sure that you want to remove todo"))
+      setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} deleteTodo={deleteTodoHandler} />
     </div>
   );
 }
