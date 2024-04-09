@@ -1,6 +1,7 @@
-import React, { ReactInstance, ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import Todo from "../models/todo";
 
+// Creating a type allias
 type TodosContextObj = {
   items: Todo[];
   addTodo: (text: string) => void;
