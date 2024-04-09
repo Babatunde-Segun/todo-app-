@@ -2,15 +2,17 @@ import React from "react";
 
 import { useRef } from "react";
 import classes from "./NewTodo.module.css";
+import { useContext } from "react";
+import { TodosContext } from "../store/todos-context";
 
 // To add a function as a prop we use the arrow syntax () => {}
 // Not to forget the we have to set type of any parameter that the function may have
 //  If the function is return a value, we have to specify in our when setting the type
 //  if there's no return value , we set it to void just like the example
 
-const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = ({
-  onAddTodo,
-}) => {
+const NewTodo: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
+
   // useRef point a HTML element: you just have to tell typescript the element you are point to.
   let todoTextInputRef = useRef<HTMLInputElement>(null);
 
@@ -21,7 +23,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = ({
 
     if (enteredText.trim().length === 0) return;
 
-    onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
   return (
     <form onSubmit={handleSubmit} className={classes.form}>
