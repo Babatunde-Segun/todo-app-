@@ -1,6 +1,18 @@
 .item {
-  margin: 1rem 0;
+  margin: 1rem auto;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   background-color: #f7f5ef;
+  position: relative;
+  overflow: hidden;
+
+  max-width: 35rem;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
 }
