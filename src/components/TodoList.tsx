@@ -17,6 +17,7 @@ const TodoList: React.FC<{
     prop.deleteTodo(id);
   };
 
+  // using context api here
   const todosCtx = useContext(TodosContext);
   return (
     <AnimatePresence>
