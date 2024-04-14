@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./TodoList.module.css";
 import Todo from "../models/todo";
 import { FaTimes } from "react-icons/fa";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, spring } from "framer-motion";
 
 import { useContext } from "react";
 import { TodosContext } from "../store/todos-context";
@@ -28,12 +28,12 @@ const TodoList: React.FC<{
         className={classes.item}
       >
         {prop.text}
-        <button
+        <motion.button
           className={classes.close}
           onClick={() => todosCtx.removeTodo(prop.todo.id)}
         >
           <FaTimes color='red' size={15} />
-        </button>
+        </motion.button>
       </motion.li>
     </AnimatePresence>
   );
