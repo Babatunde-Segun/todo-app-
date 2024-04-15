@@ -7,7 +7,7 @@ import { AnimatePresence, motion, spring } from "framer-motion";
 import { useContext } from "react";
 import { TodosContext } from "../store/todos-context";
 
-// use the a custom type to specifyy the prop type]
+// use the a custom type to specifyy the prop type
 const TodoList: React.FC<{
   text: string;
   deleteTodo: (id: string) => void;
@@ -32,7 +32,7 @@ const TodoList: React.FC<{
           className={classes.close}
           onClick={() => todosCtx.removeTodo(prop.todo.id)}
         >
-          <FaTimes color='red' size={15} />
+          <FaTimes color="red" size={15} />
         </motion.button>
       </motion.li>
     </AnimatePresence>
