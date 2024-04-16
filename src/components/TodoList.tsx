@@ -7,7 +7,7 @@ import { AnimatePresence, motion, spring } from "framer-motion";
 import { useContext } from "react";
 import { TodosContext } from "../store/todos-context";
 
-// use the a custom type to specifyy the prop type
+// use the a custom type to specifyy the prop type today
 const TodoList: React.FC<{
   text: string;
   deleteTodo: (id: string) => void;
